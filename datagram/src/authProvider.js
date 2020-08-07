@@ -5,7 +5,7 @@ const cookies = new Cookies();
 
 const authProvider = {
     login: ({ username, password }) =>  {
-        let loginUrl = "/rest-auth/login/";
+        let loginUrl = "https://khchine5.pythonanywhere.com/rest-auth/login/";
         let email = username;
         let csrftoken = cookies.get('csrftoken');
         // console.log('csrfmiddlewaretoken',csrfmiddlewaretoken);
