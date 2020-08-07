@@ -11,7 +11,7 @@ const authProvider = {
         // console.log('csrfmiddlewaretoken',csrfmiddlewaretoken);
         const request = new Request(loginUrl, {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'cors',
             credentials: 'include',
             //mode: 'same-origin',
             body: JSON.stringify({ 'email':email, 'password':password}),
