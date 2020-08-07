@@ -28,7 +28,7 @@ const authProvider = {
                 }
                 return response.json();
             })
-            .then(({ response }) => {
+            .then(response => {
                 localStorage.setItem('token', response['key']);
             });
     },
