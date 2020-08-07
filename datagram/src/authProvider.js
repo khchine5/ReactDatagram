@@ -28,8 +28,8 @@ const authProvider = {
                 }
                 return response.json();
             })
-            .then(({ token }) => {
-                localStorage.setItem('token', token['key']);
+            .then(({ response }) => {
+                localStorage.setItem('token', response['key']);
             });
     },
     logout: () => {
