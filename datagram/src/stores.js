@@ -1,6 +1,6 @@
 import * as React from "react";
 import { List, Datagrid, TextField,Show, SimpleShowLayout, DateField, ReferenceField,ReferenceInput  } from 'react-admin';
-import { Create,Edit, SimpleForm, TextInput, DateInput , required, SelectInput} from 'react-admin';
+import { EditButton, Create,Edit, SimpleForm, TextInput, DateInput , required, SelectInput} from 'react-admin';
 
 
 export const listStore = (props) => (
@@ -12,6 +12,7 @@ export const listStore = (props) => (
                 <TextField source="name" />
             </ReferenceField>
             <DateField label="Publication date" source="createdDatatime" />
+            <EditButton />
         </Datagrid>
     </List>
 );

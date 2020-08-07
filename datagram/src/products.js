@@ -1,17 +1,19 @@
 import * as React from "react";
 import { List, Datagrid, TextField,Show, SimpleShowLayout, DateField, ReferenceField,ReferenceInput  } from 'react-admin';
-import { Create,Edit, SimpleForm, TextInput, DateInput , required, SelectInput} from 'react-admin';
+import {EditButton,  Create,Edit, SimpleForm, TextInput, DateInput , required, SelectInput} from 'react-admin';
 
 
 export const listProduct = (props) => (
     <List {...props}>
         <Datagrid>
+            <TextField source="id" />
             <TextField source="barcode" />
             <TextField source="name" />
             <ReferenceField label="Store" source="store" reference="store">
                 <TextField source="name" />
             </ReferenceField>
             <DateField label="Publication date" source="createdDatatime" />
+            <EditButton />
         </Datagrid>
     </List>
 );
@@ -21,8 +23,6 @@ export const ProductShow = (props) => (
         <SimpleShowLayout>
             <TextField source="name" />
             <TextField source="barcode" />
-            <TextField source="sequence" validate={required()} />
-            <DateField label="Publication date" source="createdDatatime" />
         </SimpleShowLayout>
     </Show>
 );
