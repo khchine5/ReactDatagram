@@ -5,7 +5,8 @@ import Cookies from 'universal-cookie';
 import drfProvider from './dataProviderDrf';
 import authProvider from './authProvider';
 
-import {listProduct, ProductShow} from './products';
+import {listProduct,ProductShow, ProductEdit,ProductCreate} from './products';
+import {listChain,ChainShow, ChainEdit,ChainCreate} from './chains';
 
 
 const cookies = new Cookies();
@@ -27,10 +28,11 @@ const App = () => (
   <Admin 
         authProvider={authProvider}
         dataProvider={dataProvider}
+        locale="fr"
         title="DataGram">
-      <Resource name="chain" list={ListGuesser} />
+      <Resource name="product" list={listProduct} show={ProductShow}  create={ProductCreate} edit={ProductEdit} />
+      <Resource name="chain" list={listChain} show={ChainShow}  create={ChainCreate} edit={ChainEdit}/>
       <Resource name="store" list={ListGuesser} />
-      <Resource name="product" list={listProduct} show={ProductShow} />
   </Admin>
 );
 export default App;

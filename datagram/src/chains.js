@@ -3,54 +3,47 @@ import { List, Datagrid, TextField,Show, SimpleShowLayout, DateField, ReferenceF
 import { Create,Edit, SimpleForm, TextInput, DateInput , required, SelectInput} from 'react-admin';
 
 
-export const listProduct = (props) => (
+export const listChain = (props) => (
     <List {...props}>
         <Datagrid>
-            <TextField source="barcode" />
             <TextField source="name" />
-            <ReferenceField label="Store" source="store" reference="store">
-                <TextField source="name" />
-            </ReferenceField>
+            <TextField source="address" />
             <DateField label="Publication date" source="createdDatatime" />
         </Datagrid>
     </List>
 );
 
-export const ProductShow = (props) => (
+export const ChainShow = (props) => (
     <Show {...props}>
         <SimpleShowLayout>
             <TextField source="name" />
-            <TextField source="barcode" />
+            <TextField source="address" />
             <TextInput source="sequence" validate={required()} />
-            <TextField source="store" />
             <DateField label="Publication date" source="createdDatatime" />
         </SimpleShowLayout>
     </Show>
 );
 
-export const ProductEdit = (props) => (
+export const ChainEdit = (props) => (
     <Edit {...props}>
         <SimpleForm>
             <TextInput disabled label="Id" source="id" />
             <TextInput source="name" validate={required()} />
-            <TextInput source="barcode" validate={required()} />
+            <TextInput source="address" validate={required()} />
             <TextInput source="sequence" validate={required()} />
             <DateInput label="createdDatatime" source="published_at" />
         </SimpleForm>
     </Edit>
 );
 
-export const ProductCreate = (props) => (
+export const ChainCreate = (props) => (
     <Create {...props}>
         <SimpleForm>
             <TextInput disabled label="Id" source="id" />
             <TextInput source="name" validate={required()} />
-            <TextInput source="barcode" validate={required()} />
+            <TextInput source="address" validate={required()} />
             <TextInput source="sequence" validate={required()} />
             <DateInput label="createdDatatime" source="published_at" />
-            <ReferenceInput label="Store" source="store" reference="store">
-                <SelectInput optionText="name" />
-            </ReferenceInput>
         </SimpleForm>
     </Create>
 );
