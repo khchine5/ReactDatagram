@@ -18,7 +18,7 @@ const authProvider = {
             //headers: new Headers({ 'Content-Type': 'multipart/form-data',
             //                        'Accept': 'text/html,application/xhtml+xml'})
             //headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'}),
-            headers: new Headers({ 'content-type': 'application/json',
+            headers: new Headers({ 'Content-Type': 'application/json',
                                     'Accept': 'application/json',
                                     'X-CSRFToken': csrftoken}),
         });
