@@ -18,7 +18,7 @@ export const ChainShow = (props) => (
         <SimpleShowLayout>
             <TextField source="name" />
             <TextField source="address" />
-            <TextInput source="sequence" validate={required()} />
+            <TextField source="sequence" validate={required()} />
             <DateField label="Publication date" source="createdDatatime" />
         </SimpleShowLayout>
     </Show>

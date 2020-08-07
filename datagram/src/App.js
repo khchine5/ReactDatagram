@@ -7,6 +7,7 @@ import authProvider from './authProvider';
 
 import {listProduct,ProductShow, ProductEdit,ProductCreate} from './products';
 import {listChain,ChainShow, ChainEdit,ChainCreate} from './chains';
+import {listStore,StoreShow, StoreEdit,StoreCreate} from './stores';
 
 
 const cookies = new Cookies();
@@ -32,7 +33,7 @@ const App = () => (
         title="DataGram">
       <Resource name="product" list={listProduct} show={ProductShow}  create={ProductCreate} edit={ProductEdit} />
       <Resource name="chain" list={listChain} show={ChainShow}  create={ChainCreate} edit={ChainEdit}/>
-      <Resource name="store" list={ListGuesser} />
+      <Resource name="store" list={listStore} show={StoreShow}  create={StoreCreate} edit={StoreEdit}/>
   </Admin>
 );
 export default App;

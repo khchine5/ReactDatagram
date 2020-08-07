@@ -21,8 +21,7 @@ export const ProductShow = (props) => (
         <SimpleShowLayout>
             <TextField source="name" />
             <TextField source="barcode" />
-            <TextInput source="sequence" validate={required()} />
-            <TextField source="store" />
+            <TextField source="sequence" validate={required()} />
             <DateField label="Publication date" source="createdDatatime" />
         </SimpleShowLayout>
     </Show>
