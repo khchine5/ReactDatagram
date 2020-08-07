@@ -20,7 +20,6 @@ const authProvider = {
             //headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'}),
             headers: new Headers({ 'content-type': 'application/json',
                                     'Accept': 'application/json',
-                                    'Access-Control-Allow-Origin':"*",
                                     'X-CSRFToken': csrftoken}),
         });
         return fetch(request).then(response => {
