@@ -23,7 +23,6 @@ const httpClient = (url, options = {}) => {
 };
 
 const dataProvider = drfProvider('https://khchine5.pythonanywhere.com/api', httpClient);
-//const dataProvider = drfProvider('http://127.0.0.1:8000/api', httpClient);
 
 
 const App = () => (
@@ -32,9 +31,9 @@ const App = () => (
         dataProvider={dataProvider}
         locale="fr"
         title="DataGram">
-      <Resource name="product" list={listProduct} show={ProductShow}  create={ProductCreate} edit={ProductEdit} />
       <Resource name="chain" list={listChain} show={ChainShow}  create={ChainCreate} edit={ChainEdit}/>
       <Resource name="store" list={listStore} show={StoreShow}  create={StoreCreate} edit={StoreEdit}/>
+      <Resource name="product" list={listProduct} show={ProductShow}  create={ProductCreate} edit={ProductEdit} />
   </Admin>
 );
 export default App;
