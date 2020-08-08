@@ -9,6 +9,7 @@ export const listChain = (props) => (
             <TextField source="name" />
             <TextField source="address" />
             <DateField label="Publication date" source="createdDatatime" />
+            <DateField  source="lastModified" />
             <EditButton />
         </Datagrid>
     </List>

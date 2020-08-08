@@ -22,7 +22,8 @@ const httpClient = (url, options = {}) => {
     return fetchUtils.fetchJson(url, options);
 };
 
-const dataProvider = drfProvider('https://khchine5.pythonanywhere.com/api', httpClient);
+//const dataProvider = drfProvider('https://khchine5.pythonanywhere.com/api', httpClient);
+const dataProvider = drfProvider('http://127.0.0.1:8000/api', httpClient);
 
 
 const App = () => (

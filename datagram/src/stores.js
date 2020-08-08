@@ -6,12 +6,13 @@ import { EditButton, Create,Edit, SimpleForm, TextInput, DateInput , required, S
 export const listStore = (props) => (
     <List {...props}>
         <Datagrid>
-            <TextField source="address" />
             <TextField source="name" />
+            <TextField source="address" />
             <ReferenceField label="Chain" source="chain" reference="chain">
                 <TextField source="name" />
             </ReferenceField>
             <DateField label="Publication date" source="createdDatatime" />
+            <DateField  source="lastModified" />
             <EditButton />
         </Datagrid>
     </List>
@@ -41,7 +42,7 @@ export const StoreEdit = (props) => (
             <ReferenceInput label="Chain" source="chain" reference="chain">
                 <SelectInput optionText="name" />
             </ReferenceInput>
-            <DateInput label="createdDatatime" source="published_at" />
+            <DateInput disabled label="createdDatatime" source="createdDatatime"  />
         </SimpleForm>
     </Edit>
 );
@@ -53,7 +54,7 @@ export const StoreCreate = (props) => (
             <TextInput source="name" validate={required()} />
             <TextInput source="address" validate={required()} />
             <TextInput source="sequence" validate={required()} />
-            <DateInput label="createdDatatime" source="published_at" />
+            <DateInput label="createdDatatime" source="createdDatatime" />
             <ReferenceInput label="Chain" source="chain" reference="chain">
                 <SelectInput optionText="name" />
             </ReferenceInput>
