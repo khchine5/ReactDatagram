@@ -3,8 +3,8 @@
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
-//const mainHost = "https://khchine5.pythonanywhere.com";
-const mainHost = "http://127.0.0.1:8000";
+const mainHost = "https://khchine5.pythonanywhere.com";
+//const mainHost = "http://127.0.0.1:8000";
 
 const authProvider = {
     login: ({ username, password }) =>  {
