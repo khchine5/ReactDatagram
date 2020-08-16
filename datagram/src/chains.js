@@ -2,15 +2,12 @@ import * as React from "react";
 import { List, Datagrid, TextField,Show, SimpleShowLayout, DateField,   } from 'react-admin';
 import { EditButton,Create,Edit, SimpleForm, TextInput, DateInput , required, } from 'react-admin';
 import { Filter } from 'react-admin';
-
 import Button from '@material-ui/core/Button';
 import { TopToolbar, ShowButton } from 'react-admin';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNotify, useRedirect, fetchEnd} from 'react-admin';
-
-// const mainHost = "http://127.0.0.1:8000";
-const mainHost = "https://khchine5.pythonanywhere.com";
+import {mainHost } from './utils';
 
 const ListChainFilter = (props) => (
     <Filter {...props}>
