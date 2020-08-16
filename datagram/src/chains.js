@@ -9,7 +9,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNotify, useRedirect, fetchStart, fetchEnd } from 'react-admin';
 
-const mainHost = "http://127.0.0.1:8000";
+// const mainHost = "http://127.0.0.1:8000";
+const mainHost = "https://khchine5.pythonanywhere.com";
 
 const ListChainFilter = (props) => (
     <Filter {...props}>

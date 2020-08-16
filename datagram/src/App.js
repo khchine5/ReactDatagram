@@ -9,8 +9,8 @@ import {listProduct,ProductShow, ProductEdit,ProductCreate} from './products';
 import {listChain,ChainShow, ChainEdit,ChainCreate} from './chains';
 import {listStore,StoreShow, StoreEdit,StoreCreate} from './stores';
 
-//const mainHost = "https://khchine5.pythonanywhere.com";
-const mainHost = "http://127.0.0.1:8000";
+const mainHost = "https://khchine5.pythonanywhere.com";
+//const mainHost = "http://127.0.0.1:8000";
 
 const cookies = new Cookies();
 const httpClient = (url, options = {}) => {
