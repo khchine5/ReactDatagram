@@ -3,9 +3,13 @@
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
+//const mainHost = "https://khchine5.pythonanywhere.com";
+const mainHost = "http://127.0.0.1:8000";
+
 const authProvider = {
     login: ({ username, password }) =>  {
-        let loginUrl = "https://khchine5.pythonanywhere.com/rest-auth/login/";
+        let loginUrl = mainHost + "/rest-auth/login/";
+        console.log(loginUrl);
         let email = username;
         let csrftoken = cookies.get('csrftoken');
         // console.log('csrfmiddlewaretoken',csrfmiddlewaretoken);

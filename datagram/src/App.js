@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { fetchUtils, Admin, Resource, ListGuesser } from 'react-admin';
+import { fetchUtils, Admin, Resource } from 'react-admin';
 import Cookies from 'universal-cookie';
 import drfProvider from './dataProviderDrf';
 import authProvider from './authProvider';
@@ -9,6 +9,8 @@ import {listProduct,ProductShow, ProductEdit,ProductCreate} from './products';
 import {listChain,ChainShow, ChainEdit,ChainCreate} from './chains';
 import {listStore,StoreShow, StoreEdit,StoreCreate} from './stores';
 
+//const mainHost = "https://khchine5.pythonanywhere.com";
+const mainHost = "http://127.0.0.1:8000";
 
 const cookies = new Cookies();
 const httpClient = (url, options = {}) => {
@@ -22,7 +24,7 @@ const httpClient = (url, options = {}) => {
     return fetchUtils.fetchJson(url, options);
 };
 
-const dataProvider = drfProvider('https://khchine5.pythonanywhere.com/api', httpClient);
+const dataProvider = drfProvider(mainHost + '/api', httpClient);
 
 
 const App = () => (

@@ -2,13 +2,20 @@ import * as React from "react";
 import { List, Datagrid, TextField,Show, SimpleShowLayout, DateField, ChipField,NumberInput,ReferenceArrayField  } from 'react-admin';
 import {EditButton,  Create,Edit, SimpleForm, TextInput, DateTimeInput ,BooleanInput,BooleanField, NumberField,required,  RichTextField, SingleFieldList, ReferenceArrayInput, SelectArrayInput} from 'react-admin';
 import RichTextInput from 'ra-input-rich-text';
+import { Filter } from 'react-admin';
 
+const ListProductFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Search" source="name" alwaysOn />
+        <BooleanInput label="Active" source="active" alwaysOn />
+        <NumberInput label="Price" source="price" />
+    </Filter>
+);
 
 
 export const listProduct = (props) => (
-    <List {...props}>
+    <List {...props} filters={<ListProductFilter />}>
         <Datagrid>
-            <TextField source="id" />
             <TextField source="name" />
             <TextField source="barcode" />
             <NumberField source="price"  options={{ style: 'currency', currency: 'EUR' }} />
@@ -40,7 +47,6 @@ export const ProductShow = (props) => (
 export const ProductEdit = (props) => (
     <Edit {...props}>
         <SimpleForm>
-            <TextInput disabled label="Id" source="id" />
             <TextInput source="name" validate={required()} />
             <TextInput source="barcode" validate={required()} />
             <NumberInput source="price" locales="fr-FR" />

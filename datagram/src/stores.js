@@ -1,10 +1,17 @@
 import * as React from "react";
 import { List, Datagrid, TextField,Show, SimpleShowLayout, DateField, ReferenceField,ReferenceInput  } from 'react-admin';
 import { EditButton, Create,Edit, SimpleForm, TextInput, DateInput , required, SelectInput} from 'react-admin';
+import { Filter } from 'react-admin';
+
+const ListStoreFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Search" source="name" alwaysOn />
+    </Filter>
+);
 
 
 export const listStore = (props) => (
-    <List {...props}>
+    <List {...props} filters={<ListStoreFilter />}>
         <Datagrid>
             <TextField source="name" />
             <TextField source="address" />
