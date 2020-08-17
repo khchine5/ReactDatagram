@@ -11,7 +11,7 @@ const ListProductFilter = (props) => (
         <NumberInput label="Max price" source="max_price" alwaysOn />
         <DateInput label="Start date" source="date_after" alwaysOn />
         <DateInput label="End date" source="date_before" alwaysOn />
-        <ReferenceArrayInput label="Stores" source="stores" reference="store">
+        <ReferenceArrayInput label="Stores" source="stores" reference="store" alwaysOn>
                 <SelectArrayInput optionText="name" />
         </ReferenceArrayInput>
     </Filter>
