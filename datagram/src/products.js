@@ -6,9 +6,12 @@ import { Filter } from 'react-admin';
 
 const ListProductFilter = (props) => (
     <Filter {...props}>
-        <TextInput label="Search" source="name" alwaysOn />
-        <BooleanInput label="Active" source="active" alwaysOn />
-        <NumberInput label="Price" source="price" />
+        <TextInput label="Search by name" source="name" alwaysOn />
+        <NumberInput label="Min price" source="min_price" alwaysOn />
+        <NumberInput label="Max price" source="max_price" alwaysOn />
+        <ReferenceArrayInput label="Stores" source="stores" reference="store">
+                <SelectArrayInput optionText="name" />
+        </ReferenceArrayInput>
     </Filter>
 );
 
