@@ -9,6 +9,8 @@ const ListProductFilter = (props) => (
         <TextInput label="Search by name" source="name" alwaysOn />
         <NumberInput label="Min price" source="min_price" alwaysOn />
         <NumberInput label="Max price" source="max_price" alwaysOn />
+        <DateField label="Start date" source="date_after" alwaysOn />
+        <DateField label="End date" source="date_before" alwaysOn />
         <ReferenceArrayInput label="Stores" source="stores" reference="store">
                 <SelectArrayInput optionText="name" />
         </ReferenceArrayInput>
