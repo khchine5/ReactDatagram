@@ -2,15 +2,15 @@ import * as React from "react";
 import { List, Datagrid, TextField,Show, SimpleShowLayout, DateField, ChipField,NumberInput,ReferenceArrayField  } from 'react-admin';
 import {EditButton,  Create,Edit, SimpleForm, TextInput, DateTimeInput ,BooleanInput,BooleanField, NumberField,required,  RichTextField, SingleFieldList, ReferenceArrayInput, SelectArrayInput} from 'react-admin';
 import RichTextInput from 'ra-input-rich-text';
-import { Filter } from 'react-admin';
+import { Filter, DateInput } from 'react-admin';
 
 const ListProductFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search by name" source="name" alwaysOn />
         <NumberInput label="Min price" source="min_price" alwaysOn />
         <NumberInput label="Max price" source="max_price" alwaysOn />
-        <DateField label="Start date" source="date_after" alwaysOn />
-        <DateField label="End date" source="date_before" alwaysOn />
+        <DateInput label="Start date" source="date_after" alwaysOn />
+        <DateInput label="End date" source="date_before" alwaysOn />
         <ReferenceArrayInput label="Stores" source="stores" reference="store">
                 <SelectArrayInput optionText="name" />
         </ReferenceArrayInput>
